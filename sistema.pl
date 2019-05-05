@@ -1,18 +1,12 @@
-﻿%Esta línea es para abrir el archivo en OS X.
-%consult('/Users/fernando2/Github/SistemaExperto/sistemaexpertocelulars.pl').
-
-/*
+﻿/*
 Ejemplo de sistema experto elaborado en prolog para la eleccion de smartphone.
 
 Se lanza el programa utilizando la regla compra.
 Se responde con si o s.
 
-
 El sistema es basado en la siguiente repo
 https://github.com/mbobadilla2/SistemaExperto
 */
-
-
 :- write('Iniciar con "comprar".').
 %Predicado final que imprime el resultado.
 comprar:- celular(Marca, Modelo, Tipo, Precio, Pantalla, HDD, NombreImg),
@@ -40,7 +34,7 @@ comprar:- celular(Marca, Modelo, Tipo, Precio, Pantalla, HDD, NombreImg),
         send(Img, open),
         send(Img, display, new(_, bitmap(RutaModeloExtension))),
         limpiaBC.
-%Si ninguna celular cumple los requerimientos, mostramos este mensaje :(
+%Si ninguna celular cumple los requerimientos, mostramos este mensaje
 comprar:-
         write('Lo sentimos. No contamos con un producto con esas caracteristicas'),
         nl,
@@ -115,9 +109,6 @@ j4:-                    android,
 %Reglas de clasificación (son como características genéricas que pueden tener varios modelos).
 %Se puede poner varias veces la misma regla con distinto parámetro en verifica().
 %Se puede poner mas de una condición en cada regla, separándolas por comas.
-%escritorio:-                   verifica('debe ser de escritorio').
-
-
 
 android:-                               verifica('debe ser un Android').
 ios:-                                   verifica('debe ser un Iphone').
@@ -129,13 +120,10 @@ caro:-                                  verifica('puede costar más de $16,000 p
 muyCaro:-                               verifica('puede costar más de $20,000 pesos').
 ultraCaro:-                             verifica('puede costar más de $30,000 pesos').
 
-
 almacenamiento256:-                     verifica('debe tener un almacenamiento de 256gb').
 almacenamiento128:-                     verifica('debe tener un almacenamiento de 128gb').
 almacenamiento64:-                      verifica('debe tener un almacenamiento de 64gb').
 almacenamiento32:-                      verifica('debe tener un almacenamiento de 32gb').
-
-
 
 ram8:-                                  verifica('debe tener al menos 8GB de RAM').
 ram6:-                                  verifica('debe tener al menos 6GB de RAM').
