@@ -2,9 +2,14 @@
 %consult('/Users/fernando2/Github/SistemaExperto/sistemaexpertocelulars.pl').
 
 /*
-        Sistema experto para escoger un celular basado en las necesidades del usuario.
-        Basado en el sistema 
-         https://github.com/mbobadilla2/SistemaExperto
+Ejemplo de sistema experto elaborado en prolog para la eleccion de smartphone.
+
+Se lanza el programa utilizando la regla compra.
+Se responde con si o s.
+
+
+El sistema es basado en la siguiente repo
+https://github.com/mbobadilla2/SistemaExperto
 */
 
 
